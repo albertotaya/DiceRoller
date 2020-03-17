@@ -11,18 +11,22 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
 
     var currentDrawable = 0
+    lateinit var diceImage : ImageView
+    lateinit var rollButton : Button
+    lateinit var countButton : Button
+    lateinit var resetButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button = findViewById(R.id.roll_button)
+        diceImage = findViewById(R.id.dice_image)
+        rollButton = findViewById(R.id.roll_button)
+        countButton = findViewById(R.id.count_button)
+        resetButton = findViewById(R.id.reset_button)
+
         rollButton.setOnClickListener { rollDice() }
-
-        val countButton: Button = findViewById(R.id.count_button)
         countButton.setOnClickListener{ countResult() }
-
-        val resetButton: Button = findViewById(R.id.reset_button)
         resetButton.setOnClickListener{ appReset() }
     }
 
@@ -39,12 +43,10 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
-        val diceImage: ImageView = findViewById(R.id.dice_image)
         diceImage.setImageResource(drawableResource)
     }
 
     private fun countResult() {
-        val diceImage: ImageView = findViewById(R.id.dice_image)
 
         if (currentDrawable == 0 )
             currentDrawable = 1
@@ -64,7 +66,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun appReset() {
-        val diceImage: ImageView = findViewById(R.id.dice_image)
         currentDrawable = 1
         diceImage.setImageResource(R.drawable.dice_1)
     }
