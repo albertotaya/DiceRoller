@@ -1,42 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+android:layout_height="wrap_content"
+android:layout_gravity="center_vertical"
+android:orientation="vertical"
+tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/dice_image"
+        android:id="@+id/dice_image1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/image_label"
         app:srcCompat="@drawable/empty_dice" />
 
-    <Button
-        android:id="@+id/roll_button"
+    <ImageView
+        android:id="@+id/dice_image2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/roll_label" />
+        android:contentDescription="@string/image_label"
+        app:srcCompat="@drawable/empty_dice" />
 
-    <Button
-        android:id="@+id/count_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/count_label" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/reset_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/reset_button" />
+        <Button
+            android:id="@+id/roll_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/roll_label"
+            tools2:ignore="ButtonStyle" />
 
+        <Button
+            android:id="@+id/count_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/count_label"
+            tools2:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/reset_button"
+            tools2:ignore="ButtonStyle" />
+
+    </LinearLayout>
 
 </LinearLayout>
